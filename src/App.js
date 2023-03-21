@@ -7,13 +7,11 @@ import './App.css';
 import { Container } from 'react-bootstrap';
 
 function App() {
-  const [starships, setStarships] = useState(null);
+  const [starships, setStarships] = useState([]);
 
   useEffect(() => {
     const fetchStarships = async () => {
       const fetchedStarships = await getAllStarships();
-      console.log(fetchedStarships);
-
       setStarships(fetchedStarships);
     };
     fetchStarships();
@@ -23,7 +21,7 @@ function App() {
     <div className='App'>
       <h1>STAR WARS STARSHIPS</h1>
       <Container>
-        {starships && <Starships starships={starships} />}
+        <Starships starships={starships} />
       </Container>
     </div>
   );

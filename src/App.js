@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAllStarships } from './services/sw-api';
-
-import Starships from './components/Starships';
-
+import StarShipCard from './components/StarShipCard';
 import './App.css';
 import { Container } from 'react-bootstrap';
 
@@ -19,9 +17,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>STAR WARS STARSHIPS</h1>
+      <h1>STARSHIPS</h1>
       <Container>
-        <Starships starships={starships} />
+        <StarShipCard starships={starships} />
       </Container>
     </div>
   );
